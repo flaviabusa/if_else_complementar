@@ -15,10 +15,32 @@
     */
 
     //ENTRADA
-
+    const salario = Number(prompt(`Informe o valor do seu salário:`));
 
     //PROCESSAMENTO
-
+    if ( salario > 0 && salario <= 2000) {
+        const aumento15 = salario * 15 / 100;
+        const salarioAumeto15 = salario + aumento15;
+        alert(`O valor do seu aumento é R$ ${aumento15}, e seu novo salário é de R$ ${salarioAumeto15}`);
+    }
+    else if ( salario <= 4000 ) {
+        const aumento10 = salario * 10 / 100;
+        const salarioAumeto10 = salario + aumento10;
+        alert(`O valor do seu aumento é R$ ${aumento10}, e seu novo salário é de R$ ${salarioAumeto10}`);
+    }
+    else if (salario <= 7000) {
+        const aumento7 = salario * 7.5 / 100;
+        const salarioAumeto7 = salario + aumento7;
+        alert(`O valor do seu aumento é R$ ${aumento7}, e seu novo salário é de R$ ${salarioAumeto7}`);
+    }
+    else if (salario > 7000) {
+        const aumento5 = salario * 5 / 100;
+        const salarioAumeto5 = salario + aumento5;
+        alert(`O valor do seu aumento é R$ ${aumento5}, e seu novo salário é de R$ ${salarioAumeto5}`);
+    }
+    else {
+        alert(`Valor inválido.`);
+    }
     
     //SAÍDA
 
