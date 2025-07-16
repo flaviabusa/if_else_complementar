@@ -10,10 +10,28 @@
     */
 
     //ENTRADA
-
+    
+    const valorImovel = Number(prompt(`Informe o valor de um imóvel: `));
+    const anosFinanciamento = Number(prompt(`Informe em quantos anos deseja financiar o imóvel:`));
+    const salario = Number(prompt(`Informe seu salário mensal: `));
 
     //PROCESSAMENTO
+    
+    if (valorImovel > 0 && anosFinanciamento > 0 && salario > 0) {
+        const meses = anosFinanciamento * 12;
+        const prestacaoMensal = valorImovel / meses;
+        const limitePrestacao = salario * 30 / 100;
 
+        if (prestacaoMensal <= limitePrestacao) {
+            alert(`O valor da parcela do imóvel será de R$ ${prestacaoMensal.toFixed(2)}. Logo, o financiomento FOI CONCEDIDO!`);
+        }
+        else if (prestacaoMensal > limitePrestacao) {
+            alert(`O valor da parcela do imóvel será de R$ ${prestacaoMensal.toFixed(2)}. Logo, o financiomento NÃO FOI CONCEDIDO.`);
+        }
+    }
+    else {
+        alert(`Valores inválidos. Verifique se digitou todos os dados corretamente.`);
+    }
     
     //SAÍDA
 

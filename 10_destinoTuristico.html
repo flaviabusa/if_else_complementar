@@ -12,10 +12,24 @@
     */
 
     //ENTRADA
-
-
+    const transporteSp = Number(prompt(`Informe o preço do transporte aéreo para viajar até São Paulo: `));
+    const transporteRj = Number(prompt(`Agora informe o preço do transporte aéreo para viajar até Rio de Janeiro: `));
+    const hotelSp = Number(prompt(`Informe o preço do hotel de São Paulo: `));
+    const hotelRj = Number(prompt(`Agora informe o preço do hotel de Rio de Janeiro: `));
+    const dias = Number(prompt(`Informe quantos dias pretende ficar no destino: `));
+   
     //PROCESSAMENTO
+    const custoSp = transporteSp + (hotelSp * dias);
+    const custoRj = transporteRj + (hotelRj * dias);
 
+    if (custoSp < custoRj) {
+        alert(`O destino final será São Paulo. E o custo final será de R$ ${custoSp.toFixed(2)}`);
+    } else if (custoRj < custoSp){
+        alert(`O destino final será Rio de Janeiro. E o custo final será de R$ ${custoRj.toFixed(2)}`);
+    }
+    else {
+        alert(`Você poderá escolher o seu destino! Os dois custam o mesmo valor.`);
+    }
     
     //SAÍDA
 

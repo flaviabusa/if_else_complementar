@@ -12,11 +12,26 @@
     */
 
     //ENTRADA
-
+    const valorComputador = Number(prompt(`Informe o valor do computador que está vendendo: `));
+    const formaPagamento = prompt(`Informe a forma de pagamento do cliente: (B)Boleto, (D)Dinheiro, (P)PIX`).toUpperCase().trim();
 
     //PROCESSAMENTO
-
+    let desconto = "";
+    
+    if (formaPagamento === "B"){
+        desconto = valorComputador - (valorComputador * 3 / 100);
+    }
+    else if (formaPagamento === "D"){
+        desconto = valorComputador - (valorComputador * 5 / 100);
+    }
+    else if (formaPagamento === "P"){
+        desconto = valorComputador - (valorComputador * 10 / 100);
+    }
+    else {
+        alert(`Forma de pagamento inválida.`);
+    }
     
     //SAÍDA
+    alert(`O preço final do computador de acordo com a forma de pagamento é de R$ ${desconto.toFixed(2)}`);
 
 </script>
