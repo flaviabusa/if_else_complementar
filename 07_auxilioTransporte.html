@@ -12,11 +12,29 @@
     */
 
     //ENTRADA
+    const salario = parseFloat(prompt("Informe seu salário mensal (R$):"));
+    const desejaAuxilio = prompt("Você deseja receber auxílio transporte? (sim/não)").toLowerCase();
+    const usaVeiculoProprio = prompt("Você utiliza veículo próprio para ir ao trabalho? (sim/não)").toLowerCase();
 
+    // PROCESSAMENTO
 
     //PROCESSAMENTO
+    let desconto = 0;
+    let adicional = 0;
 
+    if (desejaAuxilio === "sim" || usaVeiculoProprio === "sim") {
+        desconto = salario * 0.06;
+    }
+
+    if (usaVeiculoProprio === "sim") {
+        adicional = 200;
+    } else if (desejaAuxilio === "sim") {
+        adicional = 150;
+    }
+
+    let salarioFinal = salario - desconto + adicional;
     
     //SAÍDA
-
+    alert(`Desconto: R$ ${desconto.toFixed(2)}, Adicional: R$ ${adicional.toFixed(2)}, Salário final: R$ ${salarioFinal.toFixed(2)}. `);
+    
 </script>
