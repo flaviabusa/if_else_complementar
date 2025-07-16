@@ -12,15 +12,15 @@
     */
 
     //ENTRADA
-    const salario = parseFloat(prompt("Informe seu salário mensal (R$):"));
-    const desejaAuxilio = prompt("Você deseja receber auxílio transporte? (sim/não)").toLowerCase();
-    const usaVeiculoProprio = prompt("Você utiliza veículo próprio para ir ao trabalho? (sim/não)").toLowerCase();
+    const salario = Number(prompt(`Informe seu salário mensal (R$):`));
+    const desejaAuxilio = prompt(`Você deseja receber auxílio transporte? (sim/não)`).toLowerCase();
+    const usaVeiculoProprio = prompt(`Você utiliza veículo próprio para ir ao trabalho? (sim/não)`).toLowerCase();
 
     // PROCESSAMENTO
 
     //PROCESSAMENTO
-    let desconto = 0;
-    let adicional = 0;
+    let desconto = "";
+    let adicional = "";
 
     if (desejaAuxilio === "sim" || usaVeiculoProprio === "sim") {
         desconto = salario * 0.06;
@@ -35,6 +35,6 @@
     let salarioFinal = salario - desconto + adicional;
     
     //SAÍDA
-    alert(`Desconto: R$ ${desconto.toFixed(2)}, Adicional: R$ ${adicional.toFixed(2)}, Salário final: R$ ${salarioFinal.toFixed(2)}. `);
+    alert(`Seu desconto é de: R$ ${desconto.toFixed(2)}, seu adicional é de: R$ ${adicional.toFixed(2)} e seu salário final é: R$ ${salarioFinal.toFixed(2)}. `);
     
 </script>
